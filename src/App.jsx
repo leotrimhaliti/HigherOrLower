@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { Github } from 'lucide-react';
 
 // Replace 'G-XXXXXXXXXX' with your actual Measurement ID
-const TRACKING_ID = "G-12C2QS0H78";
+const TRACKING_ID = "G-0YD5LVJX50";
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
