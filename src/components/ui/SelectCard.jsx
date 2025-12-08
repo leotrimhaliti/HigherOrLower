@@ -28,7 +28,7 @@ const SelectCard = ({ video, isRevealed, isSelected, isHighest, onClick, disable
             onClick={onClick}
             disabled={disabled}
             className={cn(
-                "relative flex flex-col items-center justify-center p-4 w-full h-64 bg-card rounded-xl border-2 shadow-xl overflow-hidden text-center transition-colors duration-300",
+                "relative flex flex-col items-center justify-center p-2 md:p-4 w-full h-36 md:h-48 lg:h-56 bg-card rounded-xl border-2 shadow-xl overflow-hidden text-center transition-colors duration-300",
                 borderColor,
                 disabled && !isRevealed ? "cursor-default" : "cursor-pointer"
             )}

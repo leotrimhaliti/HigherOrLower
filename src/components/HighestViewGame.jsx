@@ -91,9 +91,9 @@ const HighestViewGame = () => {
     return (
         <div className="h-screen bg-background flex flex-col items-center justify-center p-4 font-sans text-foreground overflow-hidden select-none">
             {/* Header */}
-            <header className="absolute top-0 w-full flex justify-between items-center p-6 px-10 z-50">
-                <img src="/logo.jpg" alt="Zi8gzag Higher or Lower" className="h-12 md:h-14 w-auto object-contain" />
-                <div className="flex gap-6 text-sm font-bold">
+            <header className="absolute top-0 w-full flex justify-between items-center p-3 px-4 md:p-6 md:px-10 z-50">
+                <img src="/logo.jpg" alt="Zi8gzag Higher or Lower" className="h-8 md:h-12 w-auto object-contain" />
+                <div className="flex gap-3 md:gap-6 text-sm font-bold">
                     <div className="flex flex-col items-end">
                         <span className="text-muted-foreground text-xs uppercase">Streak</span>
                         <span className="text-2xl">{score}</span>
@@ -107,12 +107,12 @@ const HighestViewGame = () => {
 
             <div className="flex flex-col items-center w-full max-w-6xl z-10">
 
-                <p className="text-muted-foreground text-sm max-w-md mb-6 text-center">
+                <p className="text-muted-foreground text-xs md:text-sm max-w-md mb-3 md:mb-6 text-center mt-14 md:mt-0">
                     Pick the video with the <span className="text-green-500 font-bold">HIGHEST</span> views among these five.
                 </p>
 
                 {/* Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4 w-full">
                     {videos.map((video) => (
                         <SelectCard
                             key={video.id}

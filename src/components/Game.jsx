@@ -88,9 +88,9 @@ const Game = () => {
     return (
         <div className="h-screen bg-background flex flex-col items-center justify-center p-4 font-sans text-foreground overflow-hidden select-none">
             {/* Header */}
-            <header className="absolute top-0 w-full flex justify-between items-center p-6 px-10 z-50">
-                <img src="/logo.jpg" alt="Zi8gzag Higher or Lower" className="h-12 md:h-14 w-auto object-contain" />
-                <div className="flex gap-6 text-sm font-bold">
+            <header className="absolute top-0 w-full flex justify-between items-center p-3 px-4 md:p-6 md:px-10 z-50">
+                <img src="/logo.jpg" alt="Zi8gzag Higher or Lower" className="h-8 md:h-12 w-auto object-contain" />
+                <div className="flex gap-3 md:gap-6 text-sm font-bold">
                     <div className="flex flex-col items-end">
                         <span className="text-muted-foreground text-xs uppercase">Score</span>
                         <span className="text-2xl">{score}</span>
@@ -103,7 +103,7 @@ const Game = () => {
             </header>
 
             {/* Main Game Area */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full max-w-5xl mt-10">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 w-full max-w-5xl mt-16 md:mt-10">
 
                 {/* Card A */}
                 <div className="relative">

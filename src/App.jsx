@@ -28,12 +28,12 @@ function App() {
   return (
     <div className="relative min-h-screen bg-background overflow-hidden font-sans text-foreground select-none">
       {/* Global Header / Mode Switcher */}
-      <div className="absolute top-0 left-0 right-0 z-[60] flex justify-center p-4">
+      <div className="absolute top-0 left-0 right-0 z-[60] flex justify-center p-2 md:p-4">
         <div className="flex bg-black/50 backdrop-blur-md p-1 rounded-full border border-white/10">
           <button
             onClick={() => setMode('classic')}
             className={cn(
-              "px-6 py-2 rounded-full text-sm font-bold transition-all duration-300",
+              "px-3 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold transition-all duration-300",
               mode === 'classic' ? "bg-white text-black shadow-lg" : "text-muted-foreground hover:text-white"
             )}
           >
@@ -42,7 +42,7 @@ function App() {
           <button
             onClick={() => setMode('highest')}
             className={cn(
-              "px-6 py-2 rounded-full text-sm font-bold transition-all duration-300",
+              "px-3 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold transition-all duration-300",
               mode === 'highest' ? "bg-white text-black shadow-lg" : "text-muted-foreground hover:text-white"
             )}
           >

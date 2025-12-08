@@ -18,7 +18,7 @@ const Card = ({ video, isRevealed, isRightCard, result = null }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className={cn(
-                "relative flex flex-col items-center justify-center p-6 w-full max-w-sm h-96 bg-card rounded-xl border-2 shadow-2xl overflow-hidden text-center",
+                "relative flex flex-col items-center justify-center p-3 md:p-6 w-full max-w-xs md:max-w-sm h-56 md:h-80 bg-card rounded-xl border-2 shadow-2xl overflow-hidden text-center",
                 borderColor
             )}
         >
@@ -34,7 +34,7 @@ const Card = ({ video, isRevealed, isRightCard, result = null }) => {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col items-center gap-4">
-                <h2 className="text-xl md:text-2xl font-bold text-white drop-shadow-md line-clamp-3">
+                <h2 className="text-base md:text-xl font-bold text-white drop-shadow-md line-clamp-2 md:line-clamp-3">
                     "{video.title}"
                 </h2>
 
@@ -49,7 +49,7 @@ const Card = ({ video, isRevealed, isRightCard, result = null }) => {
                         className="flex flex-col items-center"
                     >
                         <span className={cn(
-                            "text-4xl md:text-5xl font-black tracking-tighter",
+                            "text-2xl md:text-4xl font-black tracking-tighter",
                             result === 'correct' ? "text-green-400" : result === 'wrong' ? "text-red-400" : "text-yellow-400"
                         )}>
                             {formatViews(video.views)}
@@ -60,7 +60,7 @@ const Card = ({ video, isRevealed, isRightCard, result = null }) => {
                     </motion.div>
                 ) : (
                     <div className="flex flex-col items-center animate-pulse">
-                        <span className="text-4xl md:text-5xl font-black tracking-tighter text-white">
+                        <span className="text-2xl md:text-4xl font-black tracking-tighter text-white">
                             ???
                         </span>
                         <span className="text-sm font-medium text-muted-foreground uppercase mt-1">
