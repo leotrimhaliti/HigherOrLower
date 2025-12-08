@@ -15,7 +15,7 @@ const Game = () => {
 
     useEffect(() => {
         // Initial Load
-        const storedHighScore = localStorage.getItem('zigzag-highscore') || 0;
+        const storedHighScore = localStorage.getItem('zi8gzag-highscore') || 0;
         setHighScore(parseInt(storedHighScore));
         startNewGame();
     }, []);
@@ -52,7 +52,7 @@ const Game = () => {
             setScore(newScore);
             if (newScore > highScore) {
                 setHighScore(newScore);
-                localStorage.setItem('zigzag-highscore', newScore);
+                localStorage.setItem('zi8gzag-highscore', newScore);
             }
 
             // Delay before next round
@@ -179,7 +179,7 @@ const Game = () => {
                     Video views are approximate & subject to change
                 </p>
                 <a
-                    href="https://github.com/leotrimhaliti"
+                    href="https://github.com/leotrimhaliti/HigherOrLower"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground/50 hover:text-white transition-all duration-300 block transform hover:scale-125"
