@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import Game from './components/Game';
 import HighestViewGame from './components/HighestViewGame';
 import { cn } from '@/lib/utils'; // Assuming cn utility is available or just use template literals
 
+// Replace 'G-XXXXXXXXXX' with your actual Measurement ID
+const TRACKING_ID = "G-12C2QS0H78";
+ReactGA.initialize(TRACKING_ID);
+
 function App() {
   const [mode, setMode] = useState('classic'); // 'classic' | 'highest'
+
+  useEffect(() => {
+    // Track page view on mount
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
+  useEffect(() => {
+    // Track mode changes
+    ReactGA.event({
+      category: "Game Mode",
+      action: "Change Mode",
+      label: mode,
+    });
+  }, [mode]);
 
   return (
     <div className="relative min-h-screen bg-background overflow-hidden font-sans text-foreground select-none">

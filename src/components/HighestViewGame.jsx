@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import { getRandomSet } from '@/data/videoData';
 import SelectCard from '@/components/ui/SelectCard';
 import { Button } from '@/components/ui/Button';
@@ -31,6 +32,11 @@ const HighestViewGame = () => {
         setSelectedId(null);
         setGameState('playing');
         setResult(null);
+        ReactGA.event({
+            category: "Game",
+            action: "Start Round",
+            label: "Highest Mode"
+        });
     };
 
     const handleSelect = (id) => {
@@ -47,6 +53,12 @@ const HighestViewGame = () => {
                 setHighScore(newScore);
                 localStorage.setItem('zigzag-highest-highscore', newScore);
             }
+            ReactGA.event({
+                category: "Game",
+                action: "Round Won",
+                label: "Highest Mode",
+                value: newScore
+            });
 
             // Auto next ? Maybe manual is better for this mode as it takes time to read 5 titles.
             // Let's do manual "Next Round" or auto after delay? 
@@ -54,6 +66,12 @@ const HighestViewGame = () => {
             // Let's add a "Next Round" button that appears.
         } else {
             setResult('wrong');
+            ReactGA.event({
+                category: "Game",
+                action: "Round Lost",
+                label: "Highest Mode",
+                value: score
+            });
             // Reset score on loss? Or just keep playing?
             // "If you lose, you start over" implies streak.
             // But let's keep it friendly, maybe reset score like the other mode.

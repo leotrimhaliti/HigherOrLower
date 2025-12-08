@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import { videoData, getRandomPair } from '@/data/videoData';
 import Card from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -35,6 +36,11 @@ const Game = () => {
         setScore(0);
         setGameState('playing');
         setResult(null);
+        ReactGA.event({
+            category: "Game",
+            action: "Start",
+            label: "Classic"
+        });
     };
 
     const handleGuess = (guess) => {
@@ -65,6 +71,12 @@ const Game = () => {
 
         } else {
             setResult('wrong');
+            ReactGA.event({
+                category: "Game",
+                action: "Game Over",
+                label: "Classic",
+                value: score
+            });
             setTimeout(() => {
                 setGameState('gameover');
             }, 1000);
