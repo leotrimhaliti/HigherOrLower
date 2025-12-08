@@ -89,9 +89,9 @@ const HighestViewGame = () => {
     if (videos.length === 0) return <div>Loading...</div>;
 
     return (
-        <div className="h-screen bg-background flex flex-col items-center justify-center p-4 font-sans text-foreground overflow-hidden select-none">
+        <div className="h-full bg-background flex flex-col items-center justify-center p-4 font-sans text-foreground overflow-hidden select-none relative">
             {/* Header */}
-            <header className="absolute top-0 w-full flex justify-between items-center p-3 px-4 md:p-6 md:px-10 z-50">
+            <header className="w-full flex justify-between items-center p-3 px-4 md:p-6 md:px-10 z-50 shrink-0">
                 <img src="/logo.jpg" alt="Zi8gzag Higher or Lower" className="h-8 md:h-12 w-auto object-contain" />
                 <div className="flex gap-3 md:gap-6 text-sm font-bold">
                     <div className="flex flex-col items-end">
@@ -105,9 +105,9 @@ const HighestViewGame = () => {
                 </div>
             </header>
 
-            <div className="flex flex-col items-center w-full max-w-6xl z-10">
+            <div className="flex flex-col items-center w-full max-w-6xl z-10 flex-1 overflow-y-auto pb-20 px-1 no-scrollbar">
 
-                <p className="text-muted-foreground text-xs md:text-sm max-w-md mb-3 md:mb-6 text-center mt-14 md:mt-0">
+                <p className="text-muted-foreground text-xs md:text-sm max-w-md mb-2 md:mb-6 text-center mt-14 md:mt-0 shrink-0">
                     Pick the video with the <span className="text-green-500 font-bold">HIGHEST</span> views among these five.
                 </p>
 

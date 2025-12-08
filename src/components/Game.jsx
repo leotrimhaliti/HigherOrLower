@@ -86,9 +86,9 @@ const Game = () => {
     if (!currentVideo || !nextVideo) return <div className="text-white">Loading...</div>;
 
     return (
-        <div className="h-screen bg-background flex flex-col items-center justify-center p-4 font-sans text-foreground overflow-hidden select-none">
+        <div className="flex-1 w-full bg-background flex flex-col items-center p-0 md:p-4 font-sans text-foreground select-none overflow-y-auto justify-evenly">
             {/* Header */}
-            <header className="absolute top-0 w-full flex justify-between items-center p-3 px-4 md:p-6 md:px-10 z-50">
+            <header className="w-full flex justify-between items-center p-2 px-4 md:p-6 md:px-10 z-50 shrink-0">
                 <img src="/logo.jpg" alt="Zi8gzag Higher or Lower" className="h-8 md:h-12 w-auto object-contain" />
                 <div className="flex gap-3 md:gap-6 text-sm font-bold">
                     <div className="flex flex-col items-end">
@@ -103,23 +103,23 @@ const Game = () => {
             </header>
 
             {/* Main Game Area */}
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 w-full max-w-5xl mt-16 md:mt-10">
+            <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-12 w-full max-w-5xl py-2 md:py-10">
 
                 {/* Card A */}
                 <div className="relative">
                     <Card video={currentVideo} isRevealed={true} />
-                    <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 md:hidden">
-                        <ChevronDown className="w-8 h-8 text-muted-foreground animate-bounce" />
+                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 md:hidden">
+                        <ChevronDown className="w-6 h-6 text-muted-foreground animate-bounce" />
                     </div>
                 </div>
 
-                {/* VS Badge (Desktop) */}
-                <div className="hidden md:flex items-center justify-center w-16 h-16 rounded-full bg-accent border-4 border-background z-20 shrink-0 shadow-xl">
-                    <span className="font-black text-xl italic">VS</span>
+                {/* VS Badge */}
+                <div className="flex items-center justify-center w-10 h-10 md:w-16 md:h-16 rounded-full bg-accent border-4 border-background z-20 shrink-0 shadow-xl -my-2 md:my-0">
+                    <span className="font-black text-sm md:text-xl italic">VS</span>
                 </div>
 
                 {/* Card B */}
-                <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col items-center gap-3 md:gap-6">
                     <Card
                         video={nextVideo}
                         isRevealed={gameState === 'revealed' || gameState === 'gameover'}
@@ -129,10 +129,10 @@ const Game = () => {
 
                     {/* Controls */}
                     {gameState === 'playing' && (
-                        <div className="flex flex-col gap-3 w-full animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div className="flex flex-row md:flex-col gap-2 md:gap-3 w-full animate-in fade-in slide-in-from-bottom-4 duration-500 mb-0 md:mb-0">
                             <Button
                                 size="lg"
-                                className="w-full h-14 text-lg font-bold bg-blue-600 hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all active:scale-95"
+                                className="w-full h-14 md:h-14 text-lg md:text-lg font-bold bg-green-600 hover:bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all active:scale-95"
                                 onClick={() => handleGuess('higher')}
                             >
                                 <ChevronUp className="mr-2 h-6 w-6" /> HIGHER
@@ -141,7 +141,7 @@ const Game = () => {
                             <Button
                                 size="lg"
                                 variant="outline"
-                                className="w-full h-14 text-lg font-bold border-2 hover:bg-white/5 active:scale-95"
+                                className="w-full h-14 md:h-14 text-lg md:text-lg font-bold border-2 hover:bg-white/5 active:scale-95"
                                 onClick={() => handleGuess('lower')}
                             >
                                 <ChevronDown className="mr-2 h-6 w-6" /> LOWER
@@ -185,21 +185,7 @@ const Game = () => {
                 </div>
             )}
 
-            {/* Footer */}
-            <footer className="absolute bottom-6 z-50 flex flex-col items-center gap-2 animate-in fade-in duration-1000 delay-500">
-                <p className="text-[10px] text-muted-foreground/30 uppercase tracking-widest pointer-events-none">
-                    Video views are approximate & subject to change
-                </p>
-                <a
-                    href="https://github.com/leotrimhaliti/HigherOrLower"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground/50 hover:text-white transition-all duration-300 block transform hover:scale-125"
-                    aria-label="GitHub Profile"
-                >
-                    <Github className="w-8 h-8" />
-                </a>
-            </footer>
+
 
         </div>
     );
