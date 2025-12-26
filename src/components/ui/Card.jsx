@@ -24,16 +24,30 @@ const Card = ({ video, isRevealed, isRightCard, result = null }) => {
         >
             {/* Background Image / Thumbnail with Overlay */}
             <div className="absolute inset-0 z-0 bg-black">
-                <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-contain opacity-50"
-                    onError={(e) => {
-                        if (e.target.src.includes('maxresdefault.jpg')) {
-                            e.target.src = e.target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
-                        }
-                    }}
-                />
+                {video.thumbnail ? (
+                    <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-full object-contain opacity-50"
+                        onError={(e) => {
+                            // Try fallback resolutions
+                            const src = e.target.src;
+                            if (src.includes('maxresdefault.jpg')) {
+                                e.target.src = src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                            } else if (src.includes('hqdefault.jpg')) {
+                                e.target.src = src.replace('hqdefault.jpg', 'mqdefault.jpg');
+                            } else if (src.includes('mqdefault.jpg')) {
+                                e.target.src = src.replace('mqdefault.jpg', 'sddefault.jpg');
+                            } else {
+                                // Hide the broken image
+                                e.target.style.display = 'none';
+                            }
+                        }}
+                    />
+                ) : (
+                    /* Gradient placeholder when no thumbnail */
+                    <div className="w-full h-full bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90" />
             </div>
 

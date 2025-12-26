@@ -70,8 +70,8 @@ const parseViews = (viewText) => {
 
         // Scroll into view to trigger lazy loading of thumbnails/data
         await handle.evaluate(el => el.scrollIntoView({ block: 'center' }));
-        // Brief wait for content to load
-        await new Promise(r => setTimeout(r, 100));
+        // Wait longer for thumbnails to lazy load
+        await new Promise(r => setTimeout(r, 300));
 
         const data = await handle.evaluate(el => {
             const titleEl = el.querySelector('#video-title');
@@ -85,20 +85,58 @@ const parseViews = (viewText) => {
                 }
             }
 
-            const imgEl = el.querySelector('ytd-thumbnail img');
-            let thumb = imgEl ? imgEl.src : '';
+            // Try multiple methods to get thumbnail
+            let thumb = '';
 
-            // Handle lazy loaded images (src might be empty or a placeholder)
-            if (!thumb || thumb.startsWith('data:')) {
-                const blobThumb = el.querySelector('ytd-thumbnail #thumbnail img');
-                if (blobThumb) thumb = blobThumb.src;
+            // Method 1: Direct img src
+            const imgEl = el.querySelector('ytd-thumbnail img');
+            if (imgEl && imgEl.src && !imgEl.src.startsWith('data:')) {
+                thumb = imgEl.src;
             }
 
-            // Fix resolution
-            if (thumb && thumb.includes('mqdefault')) {
-                thumb = thumb.replace('mqdefault.jpg', 'maxresdefault.jpg');
-            } else if (thumb && thumb.includes('hqdefault')) {
-                thumb = thumb.replace('hqdefault.jpg', 'maxresdefault.jpg');
+            // Method 2: Try different selectors
+            if (!thumb || thumb.startsWith('data:')) {
+                const altImg = el.querySelector('#thumbnail img');
+                if (altImg && altImg.src && !altImg.src.startsWith('data:')) {
+                    thumb = altImg.src;
+                }
+            }
+
+            // Method 3: Extract video ID from link and construct thumbnail URL
+            if (!thumb || thumb.startsWith('data:')) {
+                const linkEl = el.querySelector('a#thumbnail');
+                if (linkEl && linkEl.href) {
+                    const match = linkEl.href.match(/\/watch\?v=([a-zA-Z0-9_-]{11})/);
+                    if (match && match[1]) {
+                        thumb = `https://i.ytimg.com/vi/${match[1]}/maxresdefault.jpg`;
+                    }
+                }
+            }
+
+            // Method 4: Try video-title link
+            if (!thumb || thumb.startsWith('data:')) {
+                const titleLink = el.querySelector('#video-title-link');
+                if (titleLink && titleLink.href) {
+                    const match = titleLink.href.match(/\/watch\?v=([a-zA-Z0-9_-]{11})/);
+                    if (match && match[1]) {
+                        thumb = `https://i.ytimg.com/vi/${match[1]}/maxresdefault.jpg`;
+                    }
+                }
+            }
+
+            // Clean up thumbnail URL - remove query params that might cause issues
+            if (thumb && thumb.includes('i.ytimg.com')) {
+                const urlParts = thumb.split('?')[0];
+                // Ensure we're using maxresdefault
+                if (urlParts.includes('mqdefault')) {
+                    thumb = urlParts.replace('mqdefault.jpg', 'maxresdefault.jpg');
+                } else if (urlParts.includes('hqdefault')) {
+                    thumb = urlParts.replace('hqdefault.jpg', 'maxresdefault.jpg');
+                } else if (urlParts.includes('sddefault')) {
+                    thumb = urlParts.replace('sddefault.jpg', 'maxresdefault.jpg');
+                } else {
+                    thumb = urlParts;
+                }
             }
 
             return {
