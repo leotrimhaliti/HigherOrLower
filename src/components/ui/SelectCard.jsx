@@ -39,6 +39,11 @@ const SelectCard = ({ video, isRevealed, isSelected, isHighest, onClick, disable
                     src={video.thumbnail}
                     alt={video.title}
                     className="w-full h-full object-contain opacity-40"
+                    onError={(e) => {
+                        if (e.target.src.includes('maxresdefault.jpg')) {
+                            e.target.src = e.target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                        }
+                    }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90" />
             </div>

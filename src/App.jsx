@@ -57,18 +57,18 @@ function App() {
       </div>
 
       {/* Global Footer */}
-      <footer className="w-full z-50 flex flex-col items-center gap-1 md:gap-2 shrink-0 pb-2 md:pb-6 bg-background">
-        <p className="text-[10px] text-muted-foreground/30 uppercase tracking-widest pointer-events-none">
-          Video views are approximate & subject to change
-        </p>
+      <footer className="w-full z-50 flex flex-col items-center gap-1 md:gap-2 shrink-0 pb-4 md:pb-8 bg-background mt-auto">
         <a
           href="https://github.com/leotrimhaliti/HigherOrLower"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground/50 hover:text-white transition-all duration-300 block transform hover:scale-125"
+          className="group flex flex-col items-center gap-2 transition-all duration-300"
           aria-label="GitHub Profile"
         >
-          <Github className="w-8 h-8" />
+          <p className="text-[10px] text-muted-foreground/30 uppercase tracking-widest group-hover:text-muted-foreground/60 transition-colors duration-300 text-center px-4">
+            Video views are approximate & subject to change
+          </p>
+          <Github className="w-8 h-8 text-muted-foreground/50 group-hover:text-white transition-all duration-300 transform group-hover:scale-125" />
         </a>
       </footer>
     </div>

@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 
 const CHANNEL_URL = 'https://www.youtube.com/@zi8gzag/videos';
-const TARGET_COUNT = 100;
 
 const parseViews = (viewText) => {
     if (!viewText) return 0;
@@ -34,10 +33,11 @@ const parseViews = (viewText) => {
     let items = [];
     let previousHeight = 0;
     let retries = 0;
+    const maxRetries = 5;
 
-    console.log('Scrolling to load videos...');
-    // Scroll loop
-    while (items.length < TARGET_COUNT && retries < 15) {
+    console.log('Scrolling to load all videos...');
+    // Scroll loop until we reach the bottom
+    while (retries < maxRetries) {
         items = await page.$$('ytd-rich-item-renderer');
         console.log(`Found ${items.length} videos so far...`);
 
@@ -45,39 +45,39 @@ const parseViews = (viewText) => {
         await page.evaluate('window.scrollTo(0, document.documentElement.scrollHeight)');
 
         try {
+            // Wait for height to change
             await page.waitForFunction(
                 `document.documentElement.scrollHeight > ${previousHeight}`,
-                { timeout: 3000 }
+                { timeout: 5000 }
             );
-            retries = 0;
+            retries = 0; // Reset retries if we loaded more content
         } catch (e) {
             retries++;
-            console.log('Waiting for more content...');
+            console.log(`Waiting for more content... (Retry ${retries}/${maxRetries})`);
+            // Wait a bit more to be sure
             await new Promise(r => setTimeout(r, 2000));
         }
     }
 
-    console.log(`Extracting data for up to ${TARGET_COUNT} videos...`);
+    console.log(`Extracting data for all ${items.length} videos found...`);
 
-    // Lazy load handling: scroll each item into view
+    // Extract handles again to ensure we have the latest set
     const handles = await page.$$('ytd-rich-item-renderer');
     const processedData = [];
-    const count = Math.min(handles.length, TARGET_COUNT);
 
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < handles.length; i++) {
         const handle = handles[i];
 
-        // Scroll into view
+        // Scroll into view to trigger lazy loading of thumbnails/data
         await handle.evaluate(el => el.scrollIntoView({ block: 'center' }));
-        // Brief wait for image load
-        await new Promise(r => setTimeout(r, 200));
+        // Brief wait for content to load
+        await new Promise(r => setTimeout(r, 100));
 
         const data = await handle.evaluate(el => {
             const titleEl = el.querySelector('#video-title');
             const metaSpans = el.querySelectorAll('span.inline-metadata-item.style-scope.ytd-video-meta-block');
 
             let viewText = '0 views';
-            // Find "views" text
             for (const span of metaSpans) {
                 if (span.innerText.includes('view')) {
                     viewText = span.innerText;
@@ -88,8 +88,16 @@ const parseViews = (viewText) => {
             const imgEl = el.querySelector('ytd-thumbnail img');
             let thumb = imgEl ? imgEl.src : '';
 
+            // Handle lazy loaded images (src might be empty or a placeholder)
+            if (!thumb || thumb.startsWith('data:')) {
+                const blobThumb = el.querySelector('ytd-thumbnail #thumbnail img');
+                if (blobThumb) thumb = blobThumb.src;
+            }
+
             // Fix resolution
-            if (thumb && thumb.includes('hqdefault')) {
+            if (thumb && thumb.includes('mqdefault')) {
+                thumb = thumb.replace('mqdefault.jpg', 'maxresdefault.jpg');
+            } else if (thumb && thumb.includes('hqdefault')) {
                 thumb = thumb.replace('hqdefault.jpg', 'maxresdefault.jpg');
             }
 
@@ -101,6 +109,10 @@ const parseViews = (viewText) => {
         });
 
         processedData.push({ id: i + 1, ...data });
+
+        if (i % 50 === 0) {
+            console.log(`Processed ${i} / ${handles.length} videos...`);
+        }
     }
 
     console.log('Processing view counts...');
@@ -119,7 +131,16 @@ export const getRandomPair = () => {
   const shuffled = [...videoData].sort(() => 0.5 - Math.random());
   return [shuffled[0], shuffled[1]];
 };
+
+export const getRandomSet = (count) => {
+  const shuffled = [...videoData].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
 `;
+
+    if (!fs.existsSync('src/data')) {
+        fs.mkdirSync('src/data', { recursive: true });
+    }
 
     fs.writeFileSync('src/data/videoData.js', fileContent);
     console.log(`Successfully scraped ${finalData.length} videos and updated src/data/videoData.js`);
