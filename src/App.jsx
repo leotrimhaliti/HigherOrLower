@@ -4,6 +4,7 @@ import Game from './components/Game';
 import HighestViewGame from './components/HighestViewGame';
 import { cn } from '@/lib/utils';
 import { Github } from 'lucide-react';
+import version from './version.json';
 
 // Replace 'G-XXXXXXXXXX' with your actual Measurement ID
 const TRACKING_ID = "G-12C2QS0H78";
@@ -67,6 +68,9 @@ function App() {
         >
           <p className="text-[10px] text-muted-foreground/30 uppercase tracking-widest group-hover:text-muted-foreground/60 transition-colors duration-300 text-center px-4">
             Video views are approximate & subject to change
+          </p>
+          <p className="text-[10px] text-muted-foreground/40 tracking-wide">
+            Last updated: {version.lastUpdated}
           </p>
           <Github className="w-8 h-8 text-muted-foreground/50 group-hover:text-white transition-all duration-300 transform group-hover:scale-125" />
         </a>

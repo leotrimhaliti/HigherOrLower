@@ -1,0 +1,41 @@
+name: Daily Video Scrape
+
+on:
+    schedule:
+        # Runs every day at 6:00 AM UTC (7:00 AM CET / 8:00 AM CEST)
+        - cron: "0 6 * * *"
+    workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+    scrape:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Run scraper
+              run: node scraper.js
+
+            - name: Update version date
+              run: |
+                  echo '{"lastUpdated": "'$(date +%Y-%m-%d)'"}' > src/version.json
+
+            - name: Commit and push changes
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add src/data/videoData.js src/version.json
+                  git diff --staged --quiet || git commit -m "chore: daily video data update [skip ci]"
+                  git push
