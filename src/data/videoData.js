@@ -2,8 +2,8 @@ export const videoData = [
     {
         "id": 1,
         "title": "Geoguessr Pro vs 4 Twitch Streamers",
-        "views": 28000,
-        "thumbnail": "https://i9.ytimg.com/vi/Wfr8h-m_4aw/hqdefault_custom_2.jpg?sqp=CMT3ysoG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAR4gpIvpluYlPCeBVOQU-qFJ4lsw"
+        "views": 29000,
+        "thumbnail": "https://i9.ytimg.com/vi/Wfr8h-m_4aw/hqdefault_custom_3.jpg?sqp=CMj-ysoG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDj6jeZgaSeifMTfJ00djQDQktBQg"
     },
     {
         "id": 2,
