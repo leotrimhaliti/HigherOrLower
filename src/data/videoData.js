@@ -2,14 +2,14 @@ export const videoData = [
     {
         "id": 1,
         "title": "Geoguessr But We're Always in a Room",
-        "views": 41000,
-        "thumbnail": "https://i9.ytimg.com/vi/ILUuQEE-dA4/hqdefault_custom_3.jpg?sqp=CJSI08oG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDTjbR1gV1dT5AAb6jCj1G52JDfDQ"
+        "views": 47000,
+        "thumbnail": "https://i9.ytimg.com/vi/ILUuQEE-dA4/hqdefault_custom_3.jpg?sqp=CMCg1MoG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDoikyAo8JRuZ1OdTsU-eYolKfnOw"
     },
     {
         "id": 2,
         "title": "Geoguessr Pro vs 4 Twitch Streamers",
         "views": 34000,
-        "thumbnail": "https://i9.ytimg.com/vi/Wfr8h-m_4aw/hqdefault_custom_3.jpg?sqp=CJSI08oG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAWDAhnuDSr-P8XFkI9EVQVPjeXvA"
+        "thumbnail": "https://i9.ytimg.com/vi/Wfr8h-m_4aw/hqdefault_custom_3.jpg?sqp=CMCg1MoG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC-lyg4dlggTYkS60vq34GZQIIkaA"
     },
     {
         "id": 3,
@@ -152,7 +152,7 @@ export const videoData = [
     {
         "id": 26,
         "title": "Geoguessr 1v1 But Jack ALWAYS Knows the Country",
-        "views": 193000,
+        "views": 194000,
         "thumbnail": "https://i.ytimg.com/vi/C5ELbQtvBrk/maxresdefault.jpg"
     },
     {
@@ -230,7 +230,7 @@ export const videoData = [
     {
         "id": 39,
         "title": "Jack vs Zerkaa on Geoguessr was INSANE",
-        "views": 95000,
+        "views": 96000,
         "thumbnail": "https://i.ytimg.com/vi/roc0pvYRXoc/maxresdefault.jpg"
     },
     {
@@ -404,7 +404,7 @@ export const videoData = [
     {
         "id": 68,
         "title": "Can I Beat Jack in his OWN Town on Geoguessr?",
-        "views": 385000,
+        "views": 386000,
         "thumbnail": "https://i.ytimg.com/vi/1izqha92R9Y/maxresdefault.jpg"
     },
     {
@@ -644,7 +644,7 @@ export const videoData = [
     {
         "id": 108,
         "title": "Geoguessr Pro Reacts to Sidemen vs PRO",
-        "views": 157000,
+        "views": 158000,
         "thumbnail": "https://i.ytimg.com/vi/6VuP0mEWSlY/maxresdefault.jpg"
     },
     {
@@ -656,7 +656,7 @@ export const videoData = [
     {
         "id": 110,
         "title": "1v1 vs EVERY Rank in Geoguessr",
-        "views": 375000,
+        "views": 376000,
         "thumbnail": "https://i.ytimg.com/vi/JPOLAx78Ebw/maxresdefault.jpg"
     },
     {
@@ -2036,7 +2036,7 @@ export const videoData = [
     {
         "id": 340,
         "title": "Geoguessr Pro Guesses ONLY Using Street View Coverage",
-        "views": 29000,
+        "views": 30000,
         "thumbnail": "https://i.ytimg.com/vi/A0XBWa9UFqM/maxresdefault.jpg"
     },
     {
@@ -4172,7 +4172,7 @@ export const videoData = [
     {
         "id": 696,
         "title": "Can You Figure Out the Secret Theme in These Geoguessr Challenge Maps?",
-        "views": 8000,
+        "views": 8100,
         "thumbnail": "https://i.ytimg.com/vi/6SRq-BYURos/maxresdefault.jpg"
     },
     {
