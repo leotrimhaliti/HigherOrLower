@@ -2,25 +2,25 @@ export const videoData = [
     {
         "id": 1,
         "title": "I Created an IMPOSSIBLE Geoguessr Quiz for Jack",
-        "views": 21000,
+        "views": 41000,
         "thumbnail": "https://i.ytimg.com/vi/pSCjJEurGwU/hqdefault_custom_2.jpg"
     },
     {
         "id": 2,
         "title": "Geoguessr But it's all 196 Countries",
-        "views": 52000,
+        "views": 56000,
         "thumbnail": "https://i.ytimg.com/vi/opTGzFodIvk/maxresdefault.jpg"
     },
     {
         "id": 3,
         "title": "Geoguessr But it's ALWAYS at Country Borders",
-        "views": 56000,
+        "views": 59000,
         "thumbnail": "https://i.ytimg.com/vi/qN-gRXM5Djo/maxresdefault.jpg"
     },
     {
         "id": 4,
         "title": "Can I Get a 25k PERFECT SCORE Before Blinky Gets 100k?",
-        "views": 52000,
+        "views": 53000,
         "thumbnail": "https://i.ytimg.com/vi/3PeQUYpTbKk/hqdefault_custom_2.jpg"
     },
     {
@@ -37,9 +37,9 @@ export const videoData = [
     },
     {
         "id": 7,
-        "title": "Geoguessr Pro Reacts to Jynxzi playing Geoguessr Duels",
-        "views": 46000,
-        "thumbnail": "https://i.ytimg.com/vi/UuhqJzZatPc/hqdefault_custom_1.jpg"
+        "title": "Jynxzi still sucks at Geoguessr",
+        "views": 47000,
+        "thumbnail": "https://i.ytimg.com/vi/UuhqJzZatPc/hqdefault_custom_2.jpg"
     },
     {
         "id": 8,
@@ -68,7 +68,7 @@ export const videoData = [
     {
         "id": 12,
         "title": "Geoguessr 1v1 BUT Jack can GOOGLE Once per Round",
-        "views": 123000,
+        "views": 124000,
         "thumbnail": "https://i.ytimg.com/vi/qC7gmmELCVs/maxresdefault.jpg"
     },
     {
@@ -98,13 +98,13 @@ export const videoData = [
     {
         "id": 17,
         "title": "Reacting to Rainbolt Looking like a Cheater",
-        "views": 126000,
+        "views": 127000,
         "thumbnail": "https://i.ytimg.com/vi/o-uKTgHLrBc/maxresdefault.jpg"
     },
     {
         "id": 18,
         "title": "Geoguessr 1v1 BUT I have to Guess as FAR AWAY as Possible",
-        "views": 88000,
+        "views": 89000,
         "thumbnail": "https://i.ytimg.com/vi/1x--JoAaipM/maxresdefault.jpg"
     },
     {
@@ -128,7 +128,7 @@ export const videoData = [
     {
         "id": 22,
         "title": "Jack Created an IMPOSSIBLE Map for Me",
-        "views": 116000,
+        "views": 117000,
         "thumbnail": "https://i.ytimg.com/vi/MNXouHxgjnA/maxresdefault.jpg"
     },
     {
@@ -176,7 +176,7 @@ export const videoData = [
     {
         "id": 30,
         "title": "Every Game Jack's Cheats Get STRONGER",
-        "views": 169000,
+        "views": 170000,
         "thumbnail": "https://i.ytimg.com/vi/7Nl-8mdghjQ/maxresdefault.jpg"
     },
     {
@@ -242,7 +242,7 @@ export const videoData = [
     {
         "id": 41,
         "title": "The Best Tip for EVERY Country on Geoguessr",
-        "views": 93000,
+        "views": 94000,
         "thumbnail": "https://i.ytimg.com/vi/Lnfwp9EGsAo/maxresdefault.jpg"
     },
     {
@@ -296,7 +296,7 @@ export const videoData = [
     {
         "id": 50,
         "title": "Geoguessr 1v1 But I Have INFINITE Guesses",
-        "views": 165000,
+        "views": 166000,
         "thumbnail": "https://i.ytimg.com/vi/zdb77EhNiNU/maxresdefault.jpg"
     },
     {
@@ -326,7 +326,7 @@ export const videoData = [
     {
         "id": 55,
         "title": "2v2 Ranked Geoguessr BUT Jack Chooses the Country",
-        "views": 130000,
+        "views": 131000,
         "thumbnail": "https://i.ytimg.com/vi/DyZQrD1kR_8/maxresdefault.jpg"
     },
     {
@@ -434,7 +434,7 @@ export const videoData = [
     {
         "id": 73,
         "title": "Geoguessr 1v1 But Jack ALWAYS Knows the Country",
-        "views": 357000,
+        "views": 358000,
         "thumbnail": "https://i.ytimg.com/vi/C5ELbQtvBrk/maxresdefault.jpg"
     },
     {
@@ -602,7 +602,7 @@ export const videoData = [
     {
         "id": 101,
         "title": "Geoguessr 1v1 BUT I Can Only Guess Countries WITHOUT Streetview",
-        "views": 159000,
+        "views": 160000,
         "thumbnail": "https://i.ytimg.com/vi/ZaqeOTr5Khs/maxresdefault.jpg"
     },
     {
@@ -638,7 +638,7 @@ export const videoData = [
     {
         "id": 107,
         "title": "Can Radu Beat Rainbolt WITHOUT Seeing the Photo",
-        "views": 113000,
+        "views": 114000,
         "thumbnail": "https://i.ytimg.com/vi/z_HckaBBm78/maxresdefault.jpg"
     },
     {
@@ -686,13 +686,13 @@ export const videoData = [
     {
         "id": 115,
         "title": "Can I Beat Jack in his OWN Town on Geoguessr?",
-        "views": 503000,
+        "views": 505000,
         "thumbnail": "https://i.ytimg.com/vi/1izqha92R9Y/maxresdefault.jpg"
     },
     {
         "id": 116,
         "title": "Geoguessr Pro Reacts to Sidemen 1hp Challenge",
-        "views": 82000,
+        "views": 83000,
         "thumbnail": "https://i.ytimg.com/vi/v1RWOEGK4FM/maxresdefault.jpg"
     },
     {
@@ -746,7 +746,7 @@ export const videoData = [
     {
         "id": 125,
         "title": "Can I Beat a Geography Teacher at Geoguessr?",
-        "views": 487000,
+        "views": 489000,
         "thumbnail": "https://i.ytimg.com/vi/KomvwKOB-7o/maxresdefault.jpg"
     },
     {
@@ -758,7 +758,7 @@ export const videoData = [
     {
         "id": 127,
         "title": "I Helped LazarBeam CHEAT vs the Sidemen on Geoguessr",
-        "views": 316000,
+        "views": 317000,
         "thumbnail": "https://i.ytimg.com/vi/u1W4xzdIKXo/maxresdefault.jpg"
     },
     {
@@ -938,7 +938,7 @@ export const videoData = [
     {
         "id": 157,
         "title": "1v1 vs EVERY Rank in Geoguessr",
-        "views": 490000,
+        "views": 492000,
         "thumbnail": "https://i.ytimg.com/vi/JPOLAx78Ebw/maxresdefault.jpg"
     },
     {
@@ -980,7 +980,7 @@ export const videoData = [
     {
         "id": 164,
         "title": "Rainbolt Created IMPOSSIBLE Geoguessr Maps For Me",
-        "views": 317000,
+        "views": 318000,
         "thumbnail": "https://i.ytimg.com/vi/z5lURPO4S_A/maxresdefault.jpg"
     },
     {
@@ -998,7 +998,7 @@ export const videoData = [
     {
         "id": 167,
         "title": "Geoguessr Pro Attempts to beat ohnePixel at GERMANY",
-        "views": 141000,
+        "views": 142000,
         "thumbnail": "https://i.ytimg.com/vi/R2kwnQ7hOWY/maxresdefault.jpg"
     },
     {
@@ -1034,13 +1034,13 @@ export const videoData = [
     {
         "id": 173,
         "title": "Geoguessr 1v1 BUT I Can ONLY Guess Russia",
-        "views": 469000,
+        "views": 470000,
         "thumbnail": "https://i.ytimg.com/vi/WvOkFi6UTOs/maxresdefault.jpg"
     },
     {
         "id": 174,
         "title": "I Used Google to CHEAT Against the Geoguessr World Champion",
-        "views": 145000,
+        "views": 146000,
         "thumbnail": "https://i.ytimg.com/vi/t5GBl8k14To/maxresdefault.jpg"
     },
     {
@@ -1082,7 +1082,7 @@ export const videoData = [
     {
         "id": 181,
         "title": "Geoguessr Hide & Seek with Jack",
-        "views": 271000,
+        "views": 272000,
         "thumbnail": "https://i.ytimg.com/vi/nKMpnY4Mz5A/maxresdefault.jpg"
     },
     {
@@ -1280,7 +1280,7 @@ export const videoData = [
     {
         "id": 214,
         "title": "Geoguessr Pro Reacts to Rainbolt vs IShowSpeed",
-        "views": 278000,
+        "views": 279000,
         "thumbnail": "https://i.ytimg.com/vi/Chef7hoWv3A/maxresdefault.jpg"
     },
     {
@@ -1346,7 +1346,7 @@ export const videoData = [
     {
         "id": 225,
         "title": "Geoguessr Pro VS 10 Streamers (feat. ohnePixel)",
-        "views": 656000,
+        "views": 657000,
         "thumbnail": "https://i.ytimg.com/vi/6BWgfJeR5OE/maxresdefault.jpg"
     },
     {
@@ -1616,7 +1616,7 @@ export const videoData = [
     {
         "id": 270,
         "title": "I Trolled Jack on Geoguessr",
-        "views": 331000,
+        "views": 332000,
         "thumbnail": "https://i.ytimg.com/vi/wwPoV--d3Dw/maxresdefault.jpg"
     },
     {
@@ -1940,7 +1940,7 @@ export const videoData = [
     {
         "id": 324,
         "title": "Pro Reacts to Kai Cenat Playing Geoguessr",
-        "views": 128000,
+        "views": 129000,
         "thumbnail": "https://i.ytimg.com/vi/Hegcg1GobCI/maxresdefault.jpg"
     },
     {
@@ -2096,7 +2096,7 @@ export const videoData = [
     {
         "id": 350,
         "title": "A Professional Botanist Challenged me to beat his Plant-based Maps",
-        "views": 30000,
+        "views": 31000,
         "thumbnail": "https://i.ytimg.com/vi/kiO8yFOE2wM/maxresdefault.jpg"
     },
     {
@@ -2504,7 +2504,7 @@ export const videoData = [
     {
         "id": 418,
         "title": "How to Play Geoguessr for Free in 2025",
-        "views": 386000,
+        "views": 387000,
         "thumbnail": "https://i.ytimg.com/vi/99gw4Lv_NrM/maxresdefault.jpg"
     },
     {
@@ -3098,7 +3098,7 @@ export const videoData = [
     {
         "id": 517,
         "title": "Geoguessr World Record Attempt but I Can't See the Road",
-        "views": 7300,
+        "views": 7400,
         "thumbnail": "https://i.ytimg.com/vi/Ru4xNonHy0U/maxresdefault.jpg"
     },
     {
@@ -6986,7 +6986,7 @@ export const videoData = [
     {
         "id": 1165,
         "title": "Geoguessr Play Along 10",
-        "views": 984,
+        "views": 985,
         "thumbnail": "https://i.ytimg.com/vi/dO7TdYgtAWg/maxresdefault.jpg"
     },
     {
@@ -7178,7 +7178,7 @@ export const videoData = [
     {
         "id": 1197,
         "title": "Geoguessr: Nigeria - 3 Minutes Per Round!",
-        "views": 803,
+        "views": 807,
         "thumbnail": "https://i.ytimg.com/vi/x9mNJalP73w/maxresdefault.jpg"
     },
     {
@@ -7232,7 +7232,7 @@ export const videoData = [
     {
         "id": 1206,
         "title": "Geoguessr Play Along 2",
-        "views": 688,
+        "views": 689,
         "thumbnail": "https://i.ytimg.com/vi/7l1elyK6smk/maxresdefault.jpg"
     },
     {
@@ -7328,7 +7328,7 @@ export const videoData = [
     {
         "id": 1222,
         "title": "Geoguessr Australia State Streak!",
-        "views": 445,
+        "views": 446,
         "thumbnail": "https://i.ytimg.com/vi/0ZJydWR4ggA/maxresdefault.jpg"
     },
     {
@@ -7346,7 +7346,7 @@ export const videoData = [
     {
         "id": 1225,
         "title": "Rural World Country Streaks with Lenn The Man",
-        "views": 662,
+        "views": 663,
         "thumbnail": "https://i.ytimg.com/vi/Oq6I-GQMDnE/maxresdefault.jpg"
     },
     {
@@ -7424,7 +7424,7 @@ export const videoData = [
     {
         "id": 1238,
         "title": "Getting Svalbard TWICE On A Single Round",
-        "views": 896,
+        "views": 897,
         "thumbnail": "https://i.ytimg.com/vi/EdhcI7MiKy4/maxresdefault.jpg"
     },
     {
@@ -7436,13 +7436,13 @@ export const videoData = [
     {
         "id": 1240,
         "title": "DECENT GUESSES (Geoguessr Guess Compilation #1)",
-        "views": 746,
+        "views": 747,
         "thumbnail": "https://i.ytimg.com/vi/K3JeKmuRjbg/maxresdefault.jpg"
     },
     {
         "id": 1241,
         "title": "Guessing 23 Countries in a Row Without Moving",
-        "views": 571,
+        "views": 572,
         "thumbnail": "https://i.ytimg.com/vi/7pz_bV90rrY/maxresdefault.jpg"
     },
     {
